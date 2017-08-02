@@ -1,0 +1,3 @@
+﻿  Main.cpp
+c:\users\id student\desktop\gavin k\rpg\rpg\external.h(49): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\gavin k\rpg\rpg\external.h(62): error C2061: syntax error: identifier 'PlaySoundA'
