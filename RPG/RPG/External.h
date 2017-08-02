@@ -11,6 +11,7 @@
 #include <mmsystem.h>
 using namespace std;
 
+
 /*
 The different color codes are
 
@@ -31,6 +32,12 @@ The different color codes are
 14  YELLOW
 15  WHITE
 */
+
+void sleep(int time) {
+
+	this_thread::sleep_for(chrono::milliseconds(time));
+
+}
 
 
 void color (int Color)
@@ -55,17 +62,26 @@ void startScreen() {
 
 
 }	
-void sound() 
+void sound(int choice) 
 {
 
-	switch 
-	PlaySound(TEXT("bulb.wav"), NULL, SND_SYNC);
+	switch (choice) {
 
-	PlaySound(TEXT("squirt.wav"), NULL, SND_SYNC);
+	case 1:
+		PlaySound(TEXT("bulb.wav"), NULL, SND_SYNC);
+		break;
 
-	PlaySound(TEXT("char.wav"), NULL, SND_SYNC);
+	case 2: 
+		PlaySound(TEXT("squirt.wav"), NULL, SND_SYNC);
+		break;
 
-	PlaySound(TEXT("pokecenter.wav"), NULL, SND_SYNC);
+	case 3:
+		PlaySound(TEXT("char.wav"), NULL, SND_SYNC);
+		break;
 
-		
+	case 4:
+		PlaySound(TEXT("pokecenter.wav"), NULL, SND_SYNC);
+		break;
+
+	}
 }

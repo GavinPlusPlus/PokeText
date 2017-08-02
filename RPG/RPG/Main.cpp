@@ -18,7 +18,9 @@ void main() {
 
 	startScreen();
 
-	player1setup();
+
+
+	setup();
 
 	system("pause");
 

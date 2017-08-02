@@ -1,3 +1,4 @@
 ﻿  Main.cpp
-c:\users\id student\desktop\gavin k\rpg\rpg\external.h(49): warning C4129: '_': unrecognized character escape sequence
-c:\users\id student\desktop\gavin k\rpg\rpg\external.h(62): error C2061: syntax error: identifier 'PlaySoundA'
+h:\github\poketext\rpg\rpg\external.h(56): warning C4129: '_': unrecognized character escape sequence
+  RPG.vcxproj -> H:\GitHub\PokeText\RPG\Debug\RPG.exe
+  RPG.vcxproj -> H:\GitHub\PokeText\RPG\Debug\RPG.pdb (Partial PDB)
