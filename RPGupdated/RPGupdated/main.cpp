@@ -14,16 +14,21 @@
 
 using namespace std;
 
+string PlayerName;
 
 void main() {
 
-	int PokeSelect = 0;
-	
 	F11();
 
 	startScreen();
 
-	setup(PokeSelect);
+	setup(PlayerName);
+
+	Load(PlayerName);
+
+	system("pause");
+
+	//setup();
 
 	//combatStart();
 	//combat(PokeSelect);

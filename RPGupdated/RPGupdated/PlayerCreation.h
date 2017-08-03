@@ -31,7 +31,9 @@ Example of Save State Format
 
 using namespace std;
 
-void setup(int &CharChoice) {
+void setup(string PlayerName) {
+
+	int CharChoice;
 
 	color(25);
 
@@ -45,8 +47,6 @@ void setup(int &CharChoice) {
 	color(13);
 	cout << "Loaded SaveStates.txt" << endl;
 
-
-	string PlayerName;
 	string PokemonName = "MISSINGNAME";
 	int PokeNumber;
 	int xp;
@@ -154,7 +154,7 @@ void setup(int &CharChoice) {
 
 					color(5);
 					CharChosen = true;
-					sound(3);
+					//sound(3);
 					PokemonName = "Charmander";
 					xp = 0;
 					level = 1;
@@ -165,7 +165,7 @@ void setup(int &CharChoice) {
 
 					color(5);
 					CharChosen = true;
-					sound(1);
+					//sound(1);
 					PokemonName = "Squirtle";
 					xp = 0;
 					level = 1;
@@ -175,7 +175,7 @@ void setup(int &CharChoice) {
 
 					color(5);
 					CharChosen = true;
-					sound(2);
+					//sound(2);
 					PokemonName = "Bulbasur";
 					xp = 0;
 					level = 1;

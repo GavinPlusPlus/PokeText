@@ -68,42 +68,41 @@ void startScreen() {
 
 
 }
-void sound(int choice)
-{
 
-	switch (choice) {
+//Sound Code that does not work... >:(
+//void sound(int SoundChoice)
+//{
+//
+//	switch (SoundChoice) {
+//
+//	case 1:
+//		PlaySound(TEXT("bulb.wav"), NULL, SND_SYNC);
+//		break;
+//
+//	case 2:
+//		PlaySound(TEXT("squirt.wav"), NULL, SND_SYNC);
+//		break;
+//
+//	case 3:
+//		PlaySound(TEXT("char.wav"), NULL, SND_SYNC);
+//		break;
+//
+//	case 4:
+//		PlaySound(TEXT("pokecenter.wav"), NULL, SND_SYNC);
+//		break;
+//
+//	}
+//}
 
-	case 1:
-		PlaySound(TEXT("bulb.wav"), NULL, SND_SYNC);
-		break;
-
-	case 2:
-		PlaySound(TEXT("squirt.wav"), NULL, SND_SYNC);
-		break;
-
-	case 3:
-		PlaySound(TEXT("char.wav"), NULL, SND_SYNC);
-		break;
-
-	case 4:
-		PlaySound(TEXT("pokecenter.wav"), NULL, SND_SYNC);
-		break;
-
-	}
-}
-
-void SSsound() {
-
-
-	PlaySound(TEXT("opening.wav"), NULL, SND_SYNC);
-
-
-}
-
-void Load(string &name, int &pokenum, int &xp, int &lvl) {
+void Load(string PlayerName /*string &name, int &pokenum, int &xp, int &lvl*/) {
 
 	string search;
 	string dummy;
+
+	string nameTemp;
+	string pokenumTemp;
+	string xpTemp; 
+	string lvlTemp;
 
 	ofstream SaveStateWrite;
 	ifstream SaveStateRead;
@@ -117,14 +116,30 @@ void Load(string &name, int &pokenum, int &xp, int &lvl) {
 	while (!SaveStateRead.eof()) {
 		getline(SaveStateRead, search);
 		if (search == "=== PlayerName ===") {
-			getline(SaveStateRead, name);
-			if (search == "=== XP ===") {
-				getLine(SaveStateRead, )
+			getline(SaveStateRead, nameTemp);
+			if (nameTemp == PlayerName) {
+				getline(SaveStateRead, search);
+				//Finds Pokemon
+				getline(SaveStateRead, pokenumTemp);
+				getline(SaveStateRead, search);
+				//Finds xp
+				getline(SaveStateRead, xpTemp);
+				getline(SaveStateRead, search);
+				//Finds level
+				getline(SaveStateRead, lvlTemp);
+				getline(SaveStateRead, search);
+
+
+				cout << nameTemp << endl;
+				cout << pokenumTemp << endl;
+				cout << xpTemp << endl;
+				cout << lvlTemp << endl;
 
 
 			}
+
+
+
 		}
 	}
-
-
 }

@@ -106,71 +106,7 @@ void combat(int SEL)
 
 
 
-		}
-		
-
-	}
-
-
-	if (SEL == 2)
-	{
-		while (IsDead == false)
-		{
-			int selection;
-			cout << "FIGHT" << endl;
-
-			cout << " Pick a move \n 1: Tacke \n 2: Flame" << endl;
-			cin >> selection;
-
-			switch (selection)
-			{
-			case 1:
-				CharmanderSprite.Tackle(SquirtleSprite.Health);
-				cout << "Tackle" << endl;
-				break;
-			case 2:
-				CharmanderSprite.Flame(SquirtleSprite.Health);
-				cout << "Flame" << endl;
-				break;
-			}
-
-			srand(time(NULL));
-
-			int Rando = rand() % 2;
-
-
-			switch (Rando)
-			{
-			case 0:
-				SquirtleSprite.Tackle(CharmanderSprite.Health);
-				cout << "Tackle" << endl;
-				break;
-			case 1:
-				SquirtleSprite.WaterGun(CharmanderSprite.Health);
-				cout << "Water Gun" << endl;
-				break;
-			}
-
-			if (CharmanderSprite.Health <= 0 || SquirtleSprite.Health <= 0)
-			{
-				IsDead = true;
-				cout << "Your Health" << CharmanderSprite.Health << endl;
-				cout << "SquirtleSprite Health" << SquirtleSprite.Health << endl;
-			}
-
-
-
-
-
-
-		}
-
-
+		}	
 	}
 }
 
-void SoundEngine() {
-
-	PlaySound(TEXT("Battle.wav"), NULL, SND_SYNC);
-
-}

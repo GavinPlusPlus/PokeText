@@ -1,0 +1,8 @@
+﻿  main.cpp
+h:\github\poketext\rpgupdated\rpgupdated\external.h(62): warning C4129: '_': unrecognized character escape sequence
+h:\github\poketext\rpgupdated\rpgupdated\playercreation.h(51): warning C4101: 'PokeNumber': unreferenced local variable
+h:\github\poketext\rpgupdated\rpgupdated\combat.h(13): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+h:\github\poketext\rpgupdated\rpgupdated\combat.h(38): warning C4129: '_': unrecognized character escape sequence
+h:\github\poketext\rpgupdated\rpgupdated\combat.h(80): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  RPGupdated.vcxproj -> H:\GitHub\PokeText\RPGupdated\x64\Debug\RPGupdated.exe
+  RPGupdated.vcxproj -> H:\GitHub\PokeText\RPGupdated\x64\Debug\RPGupdated.pdb (Partial PDB)
