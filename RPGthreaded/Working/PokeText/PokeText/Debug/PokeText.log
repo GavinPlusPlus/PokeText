@@ -1,0 +1,19 @@
+﻿  main.cpp
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\external.h(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\external.h(89): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(30): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(52): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(65): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(78): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(91): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(104): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(117): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(130): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(143): warning C4129: '_': unrecognized character escape sequence
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(173): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(212): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(285): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\combat.h(358): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\id student\desktop\rpgthreaded\working\poketext\poketext\playercreation.h(58): warning C4101: 'PokeNumber': unreferenced local variable
+  PokeText.vcxproj -> C:\Users\iD Student\Desktop\RPGthreaded\Working\PokeText\Debug\PokeText.exe
+  PokeText.vcxproj -> C:\Users\iD Student\Desktop\RPGthreaded\Working\PokeText\Debug\PokeText.pdb (Partial PDB)
