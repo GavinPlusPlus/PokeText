@@ -1,9 +1,11 @@
 #include "POKEmon.h"
 #include <iostream>
+#include <time.h>
 using namespace std;
 void Pokemon::Tackle(int & EnemyHealth)
 {
 	EnemyHealth -= 5;
+	cout << name << " used " << "Tackle" << endl;
 }
 
 void Pokemon::Random(int & EnemyHealth/*, string MoveName*/)
@@ -19,6 +21,7 @@ void Pokemon::Random(int & EnemyHealth/*, string MoveName*/)
 		MoveNAME = "Headbutt";
 		MIN = 3;
 		MAX = 10;
+		srand(time(NULL));
 		random = rand() % MIN + MAX;
 		cout << name << " used " << MoveNAME << endl;
 		break;
@@ -27,6 +30,7 @@ void Pokemon::Random(int & EnemyHealth/*, string MoveName*/)
 		MoveNAME = "Light Beam";
 		MIN = 5;
 		MAX = 6;
+		srand(time(NULL));
 		random = rand() % MIN + MAX;
 		cout << name << " used " << MoveNAME << endl;
 		EnemyHealth -= random;
@@ -36,6 +40,7 @@ void Pokemon::Random(int & EnemyHealth/*, string MoveName*/)
 		MoveNAME = "Splash";
 		MIN = 4;
 		MAX = 7;
+		srand(time(NULL));
 		random = rand() % MIN + MAX;
 		cout << name << " used " << MoveNAME << endl;
 		EnemyHealth -= random;
@@ -45,6 +50,7 @@ void Pokemon::Random(int & EnemyHealth/*, string MoveName*/)
 		MoveNAME = "Flash";
 		MIN = 1;
 		MAX = 4;
+		srand(time(NULL));
 		random = rand() % MIN + MAX;
 		cout << name << " used " << MoveNAME << endl;
 		EnemyHealth -= random;
@@ -54,6 +60,7 @@ void Pokemon::Random(int & EnemyHealth/*, string MoveName*/)
 		MoveNAME = "Surf";
 		MIN = 1;
 		MAX = 6;
+		srand(time(NULL));
 		random = rand() % MIN + MAX;
 		cout << name << " used " << MoveNAME << endl;
 		EnemyHealth -= random;

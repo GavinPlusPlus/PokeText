@@ -48,7 +48,6 @@ void ConsoleTextSize(int size) {
 
 }
 
-
 void Scroll(string Text) {
 
 	for (int i = 0; i < Text.length(); i++) {
@@ -94,9 +93,9 @@ void startScreen() {
 
 
 }
+
 void sound(int choice)
 {
-
 	switch (choice) {
 
 	case 1:
@@ -110,20 +109,7 @@ void sound(int choice)
 	case 3:
 		PlaySound(TEXT("char.wav"), NULL, SND_SYNC);
 		break;
-
-	case 4:
-		PlaySound(TEXT("pokecenter.wav"), NULL, SND_SYNC);
-		break;
-
 	}
-}
-
-void SSsound() {
-
-
-	PlaySound(TEXT("opening.wav"), NULL, SND_SYNC);
-
-
 }
 
 void Load(string &name, int &pokenum, int &xp, int &lvl) {
@@ -174,4 +160,17 @@ void Load(string &name, int &pokenum, int &xp, int &lvl) {
 		}
 	}
 	cout << "Go to battle" << endl;
+}
+
+void SoundEngine(/*bool inSetup, bool inCombat, bool inPokeCenter*/) {
+
+	/*while(inSetup == true){*/
+		PlaySound(TEXT("Opening.wav"), NULL, SND_SYNC);
+	//}
+	//while (inCombat == true) {
+	//	PlaySound(TEXT("Battle.wav"), NULL, SND_SYNC);
+	//}
+	//while (inPokeCenter == true) {
+	//	PlaySound(TEXT("PokeCenter.wav"), NULL, SND_SYNC);
+	//}
 }

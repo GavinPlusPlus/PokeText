@@ -25,6 +25,7 @@ string EnemyName;
 
 string RandomNameMaker() {
 
+	srand(time(NULL));
 	string Array[6] = { "Crabby", "Piggy", "Butterfree", "Ratatta", "Exeggcute", "Zubat" };
 	int Index = rand() % 6;
 	return Array[Index];
@@ -376,8 +377,3 @@ void combat(string &PlayerName, int &pokenum, int &xp, int &level)
 	system("pause");
 }
 
-void SoundEngine() {
-
-	PlaySound(TEXT("Battle.wav"), NULL, SND_SYNC);
-
-}

@@ -20,6 +20,7 @@
 #include "Charmander.h"
 #include "Squirtle.h"
 #include "Bulbasur.h"
+
 /*
 Example of Save State Format
 ### Game Save File Start ###
@@ -32,10 +33,11 @@ Example of Save State Format
 
 using namespace std;
 
-void setup(string &PlayerName, int &CharChoice) {
+void setup(string &PlayerName, int &CharChoice, int &xp, int &level, bool inSetup, bool inCombat, bool inPokeCenter) {
 
 	color(25);
 
+	inSetup = true;
 	
 	ofstream SaveStateWrite;
 	ifstream SaveStateRead;
@@ -48,8 +50,7 @@ void setup(string &PlayerName, int &CharChoice) {
 
 	string PokemonName = "MISSINGNAME";
 	int PokeNumber;
-	int xp;
-	int level;
+
 
 	string search;
 	
@@ -186,6 +187,8 @@ void setup(string &PlayerName, int &CharChoice) {
 				color(13);
 				cout << "Congratulations!!!" << endl;
 				cout << "You have chosen " << PokemonName << endl;
+				cout << endl;
+				sleep(500);
 
 				SaveStateWrite << "\n";
 				SaveStateWrite << "### Game Save File Start ### \n";
@@ -201,6 +204,10 @@ void setup(string &PlayerName, int &CharChoice) {
 
 				color(14);
 				cout << "=-= YOUR GAME HAS BEEN SAVED =-=";
+
+				sleep(500);
+
+				Load(PlayerName, CharChoice, xp, level);
 
 			}
 			else {

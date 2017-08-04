@@ -20,3 +20,14 @@ SquirrelWater3
 === Level ===
 1
 ### Gave Save File End ### 
+
+### Game Save File Start ### 
+=== PlayerName ===
+Gavin
+=== Pokemon Number ===
+1
+=== XP ===
+0
+=== Level ===
+1
+### Gave Save File End ### 
