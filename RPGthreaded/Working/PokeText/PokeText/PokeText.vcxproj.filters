@@ -58,5 +58,8 @@
     <ClInclude Include="Squirtle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PokeCenter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

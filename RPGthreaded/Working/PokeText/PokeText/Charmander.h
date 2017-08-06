@@ -6,7 +6,7 @@ class Charmander
 {
 public:
 
-	Charmander();
+	Charmander(int &PokeHealth);
 
 
 	int Health;

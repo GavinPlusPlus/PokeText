@@ -2,11 +2,11 @@
 
 
 
-Squirtle::Squirtle()
+Squirtle::Squirtle(int &PokeHealth)
 {
 	PokemonName = "Squirtle";
 	Xp = 0;
-	Health = 39;
+	Health = PokeHealth;
 	MaxHealth = Health;
 }
 
@@ -18,7 +18,7 @@ void Squirtle::Tackle(int & EnemyHealth)
 void Squirtle::StatUpdate(string name, int xp, int level, int PokeNum)
 {
 	PlayerName = name;
-	PokemonName = "Bulbasour";
+	PokemonName = "Squirtle";
 	PokeNumber = PokeNum;
 	Xp = xp;
 	Level = level;

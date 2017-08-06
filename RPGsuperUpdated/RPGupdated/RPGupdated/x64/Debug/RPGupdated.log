@@ -1,6 +1,5 @@
 ﻿  main.cpp
 h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\external.h(87): warning C4129: '_': unrecognized character escape sequence
-h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\playercreation.h(52): warning C4101: 'PokeNumber': unreferenced local variable
 h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\combat.h(28): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\combat.h(50): warning C4129: '_': unrecognized character escape sequence
 h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\combat.h(63): warning C4129: '_': unrecognized character escape sequence
@@ -13,5 +12,6 @@ h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\combat.h(141): warning 
 h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\combat.h(203): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\combat.h(274): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\combat.h(345): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+h:\github\poketext\rpgsuperupdated\rpgupdated\rpgupdated\playercreation.h(53): warning C4101: 'PokeNumber': unreferenced local variable
   RPGupdated.vcxproj -> H:\GitHub\PokeText\RPGsuperUpdated\RPGupdated\x64\Debug\RPGupdated.exe
   RPGupdated.vcxproj -> H:\GitHub\PokeText\RPGsuperUpdated\RPGupdated\x64\Debug\RPGupdated.pdb (Partial PDB)

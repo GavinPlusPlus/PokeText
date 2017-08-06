@@ -6,7 +6,7 @@ class Bulbasur
 {
 public:
 
-	Bulbasur();
+	Bulbasur(int &PokeHealth);
 
 
 	int Health;

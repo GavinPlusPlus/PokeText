@@ -20,6 +20,7 @@
 #include "Charmander.h"
 #include "Squirtle.h"
 #include "Bulbasur.h"
+#include "combat.h"
 
 /*
 Example of Save State Format
@@ -208,7 +209,7 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level, bool inSetu
 				sleep(500);
 
 				Load(PlayerName, CharChoice, xp, level);
-
+				combat(PlayerName, CharChoice, xp, level);
 			}
 			else {
 

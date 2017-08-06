@@ -1,53 +1,15 @@
 
 ### Game Save File Start ### 
 === PlayerName ===
-Burger
+GAVIN
 === Pokemon Number ===
 1
 === XP ===
-0
+48
 === Level ===
-1
-### Gave Save File End ### 
-
-### Game Save File Start ### 
-=== PlayerName ===
-Gavin
-=== Pokemon Number ===
-1
-=== XP ===
-0
-=== Level ===
-
-### Game Save File Start ### 
-=== PlayerName ===
-CodeMonkey
-=== Pokemon Number ===
-2
-=== XP ===
-0
-=== Level ===
-1
-### Gave Save File End ### 
-
-### Game Save File Start ### 
-=== PlayerName ===
-bri
-=== Pokemon Number ===
-1
-=== XP ===
-0
-=== Level ===
-1
-### Gave Save File End ### 
-
-### Game Save File Start ### 
-=== PlayerName ===
-ldfkjs;adsfkl;ajkjfld;sasdfajkl;dsfalk;j;lskdjfa;kljsdafkl;jsdfakl;jsdfajkl;sdfaljk;sdfalkj;sdafjk;sdafwljk;jkl;sdfa;jlkfsad
-=== Pokemon Number ===
-3
-=== XP ===
-0
-=== Level ===
-1
+26
+=== PokeHealth ===
+114
+=== NextLevelUp ===
+136
 ### Gave Save File End ### 

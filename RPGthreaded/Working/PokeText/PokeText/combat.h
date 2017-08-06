@@ -19,6 +19,7 @@
 #include "Squirtle.h"
 #include "Bulbasur.h"
 #include "POKEmon.h"
+#include "PokeCenter.h"
 
 using namespace std;
 
@@ -147,7 +148,7 @@ void CombatStart() {
 	cout << endl;
 	color(13);
 	EnemyName = RandomNameMaker();
-	cout << "A wild " << EnemyName << " Appeared" << endl;
+	cout << "A wild " << EnemyName << " appeared" << endl;
 	cout << endl;
 	cout << endl;
 	cout << endl;
@@ -160,22 +161,20 @@ void CombatStart() {
 
 
 
-void combat(string &PlayerName, int &pokenum, int &xp, int &level)
+void combat(string &PlayerName, int &pokenum, int &xp, int &level, bool &GameRunning, bool &PokeCenter, int &PokeHealth, int &NextLevel)
 {
-	int rounds;
-	cout << "How many rounds would you like to battle in : ";
-	cin >> rounds;
-
-	for (int i = 0; i <= rounds; i++) {
 
 			CombatStart();
+			int XPmin = 30;
+			int XPmax = 50;
 			bool IsDead = false;
 			srand(time(NULL));
-			int x = rand() % 5 + 1;
-			Charmander CharmanderSprite; // 1
-			Squirtle SquirtleSprite; // 2
-			Bulbasur BulbasurSprite; // 3
-			Pokemon GenericPokemon(EnemyName, 39, x);
+			int XPrand = rand() % XPmax + XPmin;
+			int EnemyMoveSet = rand() % 5 + 1;
+			Charmander CharmanderSprite(PokeHealth); // 1
+			Squirtle SquirtleSprite(PokeHealth); // 2
+			Bulbasur BulbasurSprite(PokeHealth); // 3
+			Pokemon GenericPokemon(EnemyName, 39, EnemyMoveSet);
 
 
 			if (pokenum == 1)
@@ -232,13 +231,32 @@ void combat(string &PlayerName, int &pokenum, int &xp, int &level)
 
 					if (CharmanderSprite.Health <= 0 || GenericPokemon.health <= 0)
 					{
+						system("CLS");
 						IsDead = true;
-						cout << "THE BATTLE IS OVER" << endl;
+						color(7);
+						cout << "=== THE BATTLE IS OVER ===" << endl;
+						color(14);
 						cout << endl;
 						cout << "Your Health : " << CharmanderSprite.Health << endl;
+						color(13);
 						cout << EnemyName << "'s Health : " << GenericPokemon.health << endl;
-						PlaySound(TEXT("Victory.wav"), NULL, SND_SYNC);
-						sleep(5000);
+						if (CharmanderSprite.Health > GenericPokemon.health) {
+
+							color(11);
+							cout << endl;
+							cout << "Congratulations, You defeated " << EnemyName << endl;
+							PlaySound(TEXT("Victory.wav"), NULL, SND_SYNC);
+
+						}
+						else {
+
+							color(11);
+							cout << endl;
+							cout << "Sorry, You were defeated by " << EnemyName << endl;
+
+							
+
+						}
 					}
 				}
 			}
@@ -248,9 +266,6 @@ void combat(string &PlayerName, int &pokenum, int &xp, int &level)
 
 				bool IsDead = false;
 
-				Charmander CharmanderSprite; // 1
-				Squirtle SquirtleSprite; // 2
-				Bulbasur BulbasurSprite; // 3
 				Pokemon GenericPokemon(EnemyName, 39, 2);
 
 				while (IsDead == false)
@@ -305,13 +320,16 @@ void combat(string &PlayerName, int &pokenum, int &xp, int &level)
 
 					if (SquirtleSprite.Health <= 0 || GenericPokemon.health <= 0)
 					{
+						system("CLS");
 						IsDead = true;
-						cout << "THE BATTLE IS OVER" << endl;
+						color(7);
+						cout << "=== THE BATTLE IS OVER ===" << endl;
+						color(14);
 						cout << endl;
 						cout << "Your Health : " << SquirtleSprite.Health << endl;
+						color(13);
 						cout << EnemyName << "'s Health : " << GenericPokemon.health << endl;
 						PlaySound(TEXT("Victory.wav"), NULL, SND_SYNC);
-						sleep(5000);
 					}
 				}
 			}
@@ -320,11 +338,6 @@ void combat(string &PlayerName, int &pokenum, int &xp, int &level)
 			{
 
 				bool IsDead = false;
-
-				Charmander CharmanderSprite; // 1
-				Squirtle SquirtleSprite; // 2
-				Bulbasur BulbasurSprite; // 3
-				Pokemon GenericPokemon(EnemyName, 39, 2);
 
 				while (IsDead == false)
 				{
@@ -378,18 +391,26 @@ void combat(string &PlayerName, int &pokenum, int &xp, int &level)
 
 					if (BulbasurSprite.Health <= 0 || GenericPokemon.health <= 0)
 					{
+						system("CLS");
 						IsDead = true;
-						cout << "THE BATTLE IS OVER" << endl;
+						color(7);
+						cout << "=== THE BATTLE IS OVER ===" << endl;
+						color(14);
 						cout << endl;
 						cout << "Your Health : " << BulbasurSprite.Health << endl;
+						color(13);
 						cout << EnemyName << "'s Health : " << GenericPokemon.health << endl;
 						PlaySound(TEXT("Victory.wav"), NULL, SND_SYNC);
-						sleep(5000);
 					}
 				}
 			}
-		}
+		
 
-	system("pause");
+			xp = xp + XPrand;
+			LevelUp(PlayerName, pokenum, xp, level, PokeHealth, NextLevel);
+			Save(PlayerName, pokenum, xp, level, PokeHealth, NextLevel);
+			PokeCenter = false;
+			GameRunning = false;
+			exit(0);
 }
 

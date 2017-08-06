@@ -31,12 +31,12 @@ void main() {
 	startScreen();
 
 	thread game(setup, ref(PlayerName), ref(PokeSelect), ref(xp), ref(level), ref(inSetup), ref(inCombat), ref(inPokeCenter));
-	thread sound(SoundEngine/*, ref(inSetup), ref(inCombat), ref(inPokeCenter)*/);
+	//thread sound(SoundEngine/*, ref(inSetup), ref(inCombat), ref(inPokeCenter)*/);
 
-	sound.join();
+	//sound.join();
 	game.join();
 
-	combat(PlayerName, PokeSelect, xp, level);
+	
 
 
 }

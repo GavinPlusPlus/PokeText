@@ -37,6 +37,7 @@ The different color codes are
 */
 
 
+
 void ConsoleTextSize(int size) {
 
 	CONSOLE_FONT_INFOEX cfi;
@@ -86,9 +87,10 @@ void startScreen() {
 	cout << " | |__) |__ | | _____| | _____  _| |_ " << endl;
 	cout << " |  ___/ _ \\| |/ / _ \\ |/ _ \\ \\/ / __|" << endl;
 	cout << " | |  | (_) |   <  __/ |  __/>  <| |_ " << endl;
-	cout << " |_|   \\___/|_|\_\\___|_|\\___/_/\\_\\\\__|" << endl;
+	cout << " |_|   \\___/|_|\_\\___||_|\\___/_/\\_\\\__|" << endl;
 	cout << "" << endl;
-	cout << "" << endl;
+	color(11);
+	cout << "The Next Level Update || Gavin Kerr 2017" << endl;
 	cout << endl;
 
 	//sounds
@@ -114,7 +116,7 @@ void soundEffects(int choice)
 	}
 }
 
-void Load(string &name, int &pokenum, int &xp, int &lvl) {
+void Load(string &name, int &pokenum, int &xp, int &lvl, int &PokeHealth, int &NextLevel) {
 
 
 	string dummy;
@@ -127,11 +129,14 @@ void Load(string &name, int &pokenum, int &xp, int &lvl) {
 	string pokenumTemp;
 	string xpTemp;
 	string levelTemp;
+	string PokeHealthTemp;
+	string NextLevelTemp;
 
 	SaveStateWrite.open("SaveStates.txt", std::ios::app);
 	SaveStateRead.open("SaveStates.txt");
 
 	color(15);
+	cout << endl;
 	cout << "Searching SaveStates.txt for player data" << endl;
 
 	while (NameFound == false) {
@@ -144,6 +149,11 @@ void Load(string &name, int &pokenum, int &xp, int &lvl) {
 			getline(SaveStateRead, dummy);
 			getline(SaveStateRead, levelTemp);
 			getline(SaveStateRead, dummy);
+			getline(SaveStateRead, PokeHealthTemp);
+			getline(SaveStateRead, dummy);
+			getline(SaveStateRead, NextLevelTemp);
+			getline(SaveStateRead, dummy);
+			
 			NameFound = true;
 		}
 
@@ -152,16 +162,14 @@ void Load(string &name, int &pokenum, int &xp, int &lvl) {
 			pokenum = atoi(pokenumTemp.c_str());
 			xp = atoi(xpTemp.c_str());
 			lvl = atoi(levelTemp.c_str());
-
-
-			cout << nameTemp << endl;
-			cout << pokenum << endl;
-			cout << xp << endl;
-			cout << lvl << endl;
-
+			PokeHealth = atoi(PokeHealthTemp.c_str());
+			NextLevel = atoi(PokeHealthTemp.c_str());
 		}
 	}
-	cout << "Go to battle" << endl;
+	cout << "Closing SaveStates.txt" << endl;
+
+	SaveStateWrite.close();
+	SaveStateRead.close();
 }
 
 void SoundEngineStart() {
@@ -171,3 +179,74 @@ void SoundEngineStart() {
 void SoundEngineCombat() {
 	PlaySound(TEXT("Battle.wav"), NULL, SND_LOOP | SND_ASYNC);
 }
+ 
+void SoundEngineCenter() {
+	PlaySound(TEXT("PokeCenter.wav"), NULL, SND_LOOP | SND_ASYNC);
+}
+
+void clear(int lines) {
+	for (int i = 0; i <= lines; i++) {
+		cout << endl;
+	}
+}
+
+void Save(string &nameSave, int &pokenumSave, int &xpSave, int &lvlSave, int &PokeHealth, int &NextLevel) {
+
+	string nameTemp;
+	string dummy;
+	bool NameFound = false;
+
+	ofstream SaveStateWrite;
+	ifstream SaveStateRead;
+
+	SaveStateWrite.open("SaveStates.txt", std::ios::trunc);
+	SaveStateRead.open("SaveStates.txt");
+
+	SaveStateWrite << "\n";
+	SaveStateWrite << "### Game Save File Start ### \n";
+	SaveStateWrite << "=== PlayerName ===" << endl;
+	SaveStateWrite << nameSave << "\n";
+	SaveStateWrite << "=== Pokemon Number ===" << endl;
+	SaveStateWrite << pokenumSave << "\n";
+	SaveStateWrite << "=== XP ===" << endl;
+	SaveStateWrite << xpSave << "\n";
+	SaveStateWrite << "=== Level ===" << endl;
+	SaveStateWrite << lvlSave << "\n";
+	SaveStateWrite << "=== PokeHealth ===" << endl;
+	SaveStateWrite << PokeHealth << endl;
+	SaveStateWrite << "=== NextLevelUp ===" << endl;
+	SaveStateWrite << NextLevel << endl;
+	SaveStateWrite << "### Gave Save File End ### \n";
+
+
+		cout << endl;
+		sleep(1000);
+
+		cout << "Closing SaveStates.txt" << endl;
+
+		SaveStateWrite.close();
+		SaveStateRead.close();
+	
+}
+
+
+void LevelUp(string &nameLevel , int &pokenumLevel, int &xpLevel, int &lvlLevel, int &PokeHealth, int &NextLevel) {
+
+	while (xpLevel >= NextLevel) {
+
+		lvlLevel = lvlLevel + 1;
+		xpLevel = xpLevel - NextLevel;
+
+		cout << endl;
+		cout << "Whoa, your pokemon is now level : " << lvlLevel << endl;
+		NextLevel = NextLevel + 25;
+		PokeHealth = PokeHealth + 3;
+		cout << endl; 
+		cout << "XP needed for next level up : " << NextLevel << endl;
+		cout << "Your current XP is : " << xpLevel << endl;
+		cout << endl;
+		cout << "Your Pokemon health is now : " << PokeHealth << endl;
+		sleep(2000);
+	}
+}
+

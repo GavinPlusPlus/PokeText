@@ -38,8 +38,10 @@ Example of Save State Format
 
 using namespace std;
 
-void setup(string &PlayerName, int &CharChoice, int &xp, int &level) {
+void setup(string &PlayerName, int &CharChoice, int &xp, int &level, bool &SettingUp, bool &RunningGame, int &PokeHealth, int &NextLevel) {
 
+	SettingUp = true;
+	RunningGame = false;
 	
 	//Setup.join();
 	
@@ -98,14 +100,10 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level) {
 
 					PlaySound(TEXT("Blank.wav"), NULL, SND_LOOP);
 
-					Load(PlayerName, CharChoice, xp, level);
+					Load(PlayerName, CharChoice, xp, level, PokeHealth, NextLevel);
 
-					thread combat(combat, ref(PlayerName), ref(CharChoice), ref(xp), ref(level));
-
-					thread sound(SoundEngineCombat);
-
-					combat.join();
-					sound.join();
+					RunningGame = true;
+					SettingUp = false;
 
 				}
 				else {
@@ -147,9 +145,9 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level) {
 		color(10);
 		cout << "3. Bulbasur" << endl;
 		color(2);
-		cout << "	Type: Water" << endl;
+		cout << "	Type: Grass" << endl;
 		cout << "	Level: 1" << endl;
-		cout << "	Moves: Tackle, Razor Leaf, EMPTY, EMPTY" << endl;
+		cout << "	Moves: Tackle, Vine Whip, EMPTY, EMPTY" << endl;
 		cout << endl;
 		cout << endl;
 		color(5);
@@ -172,6 +170,7 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level) {
 					PokemonName = "Charmander";
 					xp = 0;
 					level = 1;
+					PokeHealth = 39;
 
 					break;
 
@@ -183,6 +182,8 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level) {
 					PokemonName = "Squirtle";
 					xp = 0;
 					level = 1;
+					PokeHealth = 39;
+
 					break;
 
 				case 3:
@@ -193,6 +194,8 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level) {
 					PokemonName = "Bulbasur";
 					xp = 0;
 					level = 1;
+					PokeHealth = 39;
+
 					break;
 
 				}
@@ -215,27 +218,23 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level) {
 				SaveStateWrite << xp << "\n";
 				SaveStateWrite << "=== Level ===" << endl;
 				SaveStateWrite << level << "\n";
+				SaveStateWrite << "=== PokeHealth ===" << endl;
+				SaveStateWrite << PokeHealth << endl;
+				SaveStateWrite << "=== NextLevelUp ===" << endl;
+				SaveStateWrite << NextLevel << endl;
 				SaveStateWrite << "### Gave Save File End ### \n";
 
 				color(14);
 				cout << "=-= YOUR GAME HAS BEEN SAVED =-=";
 
 				sleep(500);
-
-				//KillSound = true;
-
 				
 				PlaySound(TEXT("Blank.wav"), NULL, SND_LOOP);
 
-				Load(PlayerName, CharChoice, xp, level);
+				Load(PlayerName, CharChoice, xp, level, PokeHealth, NextLevel);
 
-				thread combat(combat, ref(PlayerName), ref(CharChoice), ref(xp), ref(level));
-
-				thread sound(SoundEngineCombat);
-
-				combat.join();
-				sound.join();
-
+				RunningGame = true;
+				SettingUp = false;
 
 			}
 			else {

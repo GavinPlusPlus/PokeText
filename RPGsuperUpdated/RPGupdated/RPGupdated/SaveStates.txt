@@ -31,3 +31,14 @@ Gavin
 === Level ===
 1
 ### Gave Save File End ### 
+
+### Game Save File Start ### 
+=== PlayerName ===
+asdffdadsfasd
+=== Pokemon Number ===
+1
+=== XP ===
+0
+=== Level ===
+1
+### Gave Save File End ### 

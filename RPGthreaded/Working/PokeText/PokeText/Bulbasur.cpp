@@ -2,13 +2,14 @@
 
 
 
-Bulbasur::Bulbasur()
+Bulbasur::Bulbasur(int &PokeHealth)
 {
 	PokemonName = "Bulbasur";
 	Xp = 0;
-	Health = 39;
+	Health = PokeHealth;
 	MaxHealth = Health;
 }
+
 
 void Bulbasur::Tackle(int & EnemyHealth)
 {

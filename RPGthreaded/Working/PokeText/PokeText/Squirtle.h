@@ -7,7 +7,7 @@ class Squirtle
 {
 public:
 
-	Squirtle();
+	Squirtle(int &PokeHealth);
 
 
 	int Health;

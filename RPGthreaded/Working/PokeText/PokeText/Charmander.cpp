@@ -2,11 +2,11 @@
 
 
 
-Charmander::Charmander()
+Charmander::Charmander(int &PokeHealth)
 {
 	PokemonName = "Charmander";
 	Xp = 0;
-	Health = 39;
+	Health = PokeHealth;
 	MaxHealth = Health;
 }
 
@@ -18,7 +18,7 @@ void Charmander::Tackle(int & EnemyHealth)
 void Charmander::StatUpdate(string name, int xp, int level, int PokeNum)
 {
 	PlayerName = name;
-	PokemonName = "Bulbasour";
+	PokemonName = "Charmander";
 	PokeNumber = PokeNum;
 	Xp = xp;
 	Level = level;
