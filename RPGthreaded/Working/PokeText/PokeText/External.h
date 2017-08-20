@@ -163,7 +163,7 @@ void Load(string &name, int &pokenum, int &xp, int &lvl, int &PokeHealth, int &N
 			xp = atoi(xpTemp.c_str());
 			lvl = atoi(levelTemp.c_str());
 			PokeHealth = atoi(PokeHealthTemp.c_str());
-			NextLevel = atoi(PokeHealthTemp.c_str());
+			NextLevel = atoi(NextLevelTemp.c_str());
 		}
 	}
 	cout << "Closing SaveStates.txt" << endl;
@@ -236,6 +236,8 @@ void LevelUp(string &nameLevel , int &pokenumLevel, int &xpLevel, int &lvlLevel,
 
 		lvlLevel = lvlLevel + 1;
 		xpLevel = xpLevel - NextLevel;
+		cout << PokeHealth << endl;
+		cout << xpLevel << endl;
 
 		cout << endl;
 		cout << "Whoa, your pokemon is now level : " << lvlLevel << endl;

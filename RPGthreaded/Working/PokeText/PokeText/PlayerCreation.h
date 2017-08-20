@@ -23,18 +23,7 @@
 #include "Bulbasur.h"
 #include "combat.h"
 #include "External.h"
-#include "KillSound.h"
 
-
-/*
-Example of Save State Format
-### Game Save File Start ###
-(PlayerName)
-(CharChosen)
-(xp)
-(level)
-### Game Save File End ###
-*/
 
 using namespace std;
 
@@ -42,8 +31,6 @@ void setup(string &PlayerName, int &CharChoice, int &xp, int &level, bool &Setti
 
 	SettingUp = true;
 	RunningGame = false;
-	
-	//Setup.join();
 	
 	color(25);
 

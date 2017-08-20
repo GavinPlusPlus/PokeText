@@ -165,8 +165,8 @@ void combat(string &PlayerName, int &pokenum, int &xp, int &level, bool &GameRun
 {
 
 			CombatStart();
-			int XPmin = 30;
-			int XPmax = 50;
+			int XPmin = 25;
+			int XPmax = 40;
 			bool IsDead = false;
 			srand(time(NULL));
 			int XPrand = rand() % XPmax + XPmin;

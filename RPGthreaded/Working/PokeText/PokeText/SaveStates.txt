@@ -1,15 +1,15 @@
 
 ### Game Save File Start ### 
 === PlayerName ===
-GAVIN
+Nathaniel
 === Pokemon Number ===
-1
+3
 === XP ===
-48
+7
 === Level ===
-26
+2
 === PokeHealth ===
-114
+42
 === NextLevelUp ===
-136
+125
 ### Gave Save File End ### 

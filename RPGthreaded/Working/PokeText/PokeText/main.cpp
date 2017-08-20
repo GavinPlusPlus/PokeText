@@ -22,7 +22,7 @@ void main() {
 	int xp;
 	int level;
 	int PokeHealth;
-	int NextLevel;
+	int NextLevel = 100;
 
 	//Selectors
 	bool SettingUp = true;
